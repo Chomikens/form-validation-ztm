@@ -7,7 +7,6 @@
   padding: 0;
 }
 
-
 button {
   all: unset;
 }
@@ -16,7 +15,12 @@ ul[class] {
   list-style: none;
 }
 
-input, button, textarea, select {
-    font: inherit;
-  }
-
+input,
+button,
+textarea,
+select,
+fieldset,
+legend {
+  all: unset;
+  font: inherit;
+}

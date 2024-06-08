@@ -1,6 +1,95 @@
-@use 'abstract' as * ;
+@use "abstract" as *;
 
 .form-container {
-    color: clr(dark-700);
-    background-color: clr(normal-400);
+  color: clr(dark-700);
+  background-color: clr(normal-400);
+  padding-block-end: 2rem;
+
+  h2 {
+    padding-block: 1rem;
+  }
+}
+
+.form {
+  padding-block-end: 1rem;
+
+  > * + * {
+    margin-block-start: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 37.5rem;
+    margin-inline: auto;
+
+    label,
+    input {
+      text-align: center;
+      padding-block: 0.5rem;
+      box-shadow: 7px 7px 8px #cbced1, -7px -7px 8px #ffffff;
+      border-radius: 5px;
+    }
+
+    label {
+      flex: 1 1;
+      text-wrap: balance;
+    }
+
+    input {
+        flex: 2 1;
+        padding-inline-start: 1rem;
+        transition: border-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1), color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      
+
+      &:active,
+      &:focus-within {
+        box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
+      }
+
+      &:valid{
+        border:2px solid clr(accent-400-correct);
+      }
+
+      &:invalid{
+        border:2px solid clr(accent-400-error);
+        color: clr(accent-400-error);
+      }
+
+      @include mq("small") {
+        text-align: left;
+      }
+    }
+  }
+}
+
+button[type="submit"] {
+  display: flex;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  //   background-color: clr(accent-400-correct);
+  color: clr(dark-700);
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 7px 7px 8px #cbced1, -7px -7px 8px #ffffff;
+  &:active,
+  &:focus-within {
+    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
+  }
+}
+
+.massage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 7px 7px 8px #cbced1, -7px -7px 8px #ffffff;
+  border-radius:4px;
 }

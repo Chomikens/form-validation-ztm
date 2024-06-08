@@ -12,11 +12,44 @@
     <main>
       <div class="form-container">
         <h2>Sign up today!</h2>
-        <form action="" method="post">
+        <!-- Form -->
+        <form id="form" class="form">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name1">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Full Name" minlength="3" required />
+          </div>
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone" placeholder="111-111-111" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required />
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">E-mail adress:</label>
+            <input type="email" name="email" id="email" placeholder="kotorozec.code@gmail.com" required />
+          </div>
 
+          <div class="form-group">
+            <label for="website">Website adress</label>
+            <input type="url" name="website" id="website" placeholder="https://github.com/Chomikens/" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Create password (Minimum length: 8 characters)</label>
+            <input type="password" name="password" id="password" placeholder="Create password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" title="Please include minimum 1 uppercase character, 1 number and 1 special character" required/>
+          </div>
+          <div class="form-group">
+            <label for="password-confirm">Confirm your password</label>
+            <input type="password" name="password-confirm" id="password-confirm" placeholder="Confirm  password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required />
+          </div>
+          <button type="submit" aria-label="Sumbit your answers">Register</button>
         </form>
+        <!-- Error massages -->
+        <div class="massage-container" id="error-message" aria-live="polite">
+          <h3 id="massage">Dont hesitete!</h3>
+        </div>
       </div>
     </main>
-    <footer class="main-footer">Created by @Kotorożec</footer>
+    <footer class="main-footer"><p>Created by @Kotorożec</p></footer>
   </body>
 </html>
