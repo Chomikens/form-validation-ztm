@@ -1,0 +1,21 @@
+@use "sass:map";
+
+// Colors maps
+$colors: (
+  light-100: #e7eaf6,
+  normal-400: #e3e3e3,
+  dark-700: #233142,
+  accent-400:#f95959, 
+  accent-400-second:#ff9a3c,
+);
+
+// Functions 
+
+
+@function clr($size) {
+	@if map.has-key($colors, $size) {
+		@return map.get($colors, $size);
+	} @else {
+		@error '$sizes does not have that size!';
+	}
+}

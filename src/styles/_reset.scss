@@ -1,0 +1,22 @@
+/* General reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+button {
+  all: unset;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+input, button, textarea, select {
+    font: inherit;
+  }
+

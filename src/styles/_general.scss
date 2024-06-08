@@ -1,0 +1,27 @@
+@use 'abstract' as * ;
+
+/* General styles for body */
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color:clr(normal-400);
+    background-color: clr(dark-700);
+  }
+
+ .main-header, .main-footer {
+    text-align: center;
+  }
+
+  .main-footer {
+    margin-block-start: auto;
+  }
+
+  .form-container {
+    width: min(100% - 2rem, 50rem);
+    margin-inline: auto;
+  }

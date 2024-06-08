@@ -1,0 +1,53 @@
+/* General reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* General styles for body */
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #e3e3e3;
+  background-color: #233142;
+}
+
+.main-header, .main-footer {
+  text-align: center;
+}
+
+.main-footer {
+  margin-block-start: auto;
+}
+
+.form-container {
+  width: min(100% - 2rem, 50rem);
+  margin-inline: auto;
+}
+
+.form-container {
+  color: #233142;
+  background-color: #e3e3e3;
+}
+
+/*# sourceMappingURL=style.css.map */
