@@ -77,6 +77,7 @@ button[type="submit"] {
   font-weight: 600;
   border-radius: 4px;
   box-shadow: 7px 7px 8px #cbced1, -7px -7px 8px #ffffff;
+  cursor: pointer;
   &:active,
   &:focus-within {
     box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
@@ -92,4 +93,22 @@ button[type="submit"] {
   text-transform: uppercase;
   box-shadow: 7px 7px 8px #cbced1, -7px -7px 8px #ffffff;
   border-radius:4px;
+}
+
+
+.valid-message-container {
+    border: 1px solid clr(accent-400-correct);
+}
+
+.valid-message {
+    color: clr(accent-400-correct);
+}
+
+
+.invalid-message-container {
+    border: 1px solid clr(accent-400-error);
+}
+
+.invalid-message {
+    color: clr(accent-400-error);
 }

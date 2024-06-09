@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="./src/js/main.js"></script>
+ <script defer src="./src/js/main.js"></script>
     <title>Form Validation</title>
   </head>
   <body>
@@ -13,7 +13,7 @@
       <div class="form-container">
         <h2>Sign up today!</h2>
         <!-- Form -->
-        <form id="form" class="form">
+        <form id="form" class="form" novalidate>
           <!-- Name -->
           <div class="form-group">
             <label for="name1">Name:</label>
@@ -45,7 +45,7 @@
           <button type="submit" aria-label="Sumbit your answers">Register</button>
         </form>
         <!-- Error massages -->
-        <div class="massage-container" id="error-message" aria-live="polite">
+        <div class="massage-container" id="error-massage" aria-live="polite">
           <h3 id="massage">Dont hesitete!</h3>
         </div>
       </div>
