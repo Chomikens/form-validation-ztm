@@ -29,22 +29,34 @@ function validateAPI() {
 
   // Function to act based on the updated isValid state
   function checkValidityState(e) {
-    const messageContainer = document.querySelector('#error-massage')
-    const massage = document.querySelector('#massage')
+    const messageContainer = document.querySelector("#error-massage");
+    const massage = document.querySelector("#massage");
+    const passwordSet = document.querySelector("#password");
+    const passwordConfirm = document.querySelector("#passwordConfirm");
     if (isValid) {
-        messageContainer.classList.add('valid-message-container')
-        massage.classList.add('valid-message')
-        messageContainer.classList.remove('invalid-message-container')
-        massage.classList.remove('invalid-message')
-        massage.textContent = "Form is invalid. Please fix it!"
-      massage.textContent = "Form is valid. Proceed with submission."
+      messageContainer.classList.add("valid-message-container");
+      massage.classList.add("valid-message");
+      messageContainer.classList.remove("invalid-message-container");
+      massage.classList.remove("invalid-message");
+      massage.textContent = "Form is invalid. Please fix it!";
+      massage.textContent = "Form is valid. Proceed with submission.";
     } else {
-        messageContainer.classList.remove('valid-message-container')
-        massage.classList.remove('valid-message')
-        messageContainer.classList.add('invalid-message-container')
-        massage.classList.add('invalid-message')
-        massage.textContent = "Form is invalid. Please fix it!"
+      messageContainer.classList.remove("valid-message-container");
+      massage.classList.remove("valid-message");
+      messageContainer.classList.add("invalid-message-container");
+      massage.classList.add("invalid-message");
+      massage.textContent = "Form is invalid. Please fill all fields! ";
       return;
+    }
+
+    if (passwordSet.value !== passwordConfirm.value) {
+      messageContainer.classList.add("invalid-message-container");
+      massage.classList.add("invalid-message");
+      massage.textContent = "Passwords are not the same.";
+      return;
+    } else {
+      messageContainer.classList.add("valid-message-container");
+      massage.classList.add("valid-message");
     }
     return e; // Return the event for the next function in the chain
   }
@@ -56,8 +68,20 @@ function validateAPI() {
 // Get the functions from the closure
 const [updateStateForm, checkStateForm] = validateAPI();
 
+
+// Send data and reset form 
+function sendForm(e) {
+  const formData = new FormData(form);
+  const user = Object.fromEntries(formData.entries());
+  console.log(user)
+  form.reset();
+}
+
+// function clearForm (e) {
+//   const 
+// }
 // Event listener for form submission
 form.addEventListener("submit", (e) => {
   // Compose preventDefault, updateStateForm, and checkStateForm to handle form submission
-  ValidateForm(checkStateForm, updateStateForm, preventDefault)(e);
+  ValidateForm(sendForm, checkStateForm, updateStateForm, preventDefault)(e);
 });
